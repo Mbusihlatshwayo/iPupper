@@ -26,16 +26,8 @@ class PupperViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         self.roundProfilePicture()
-            
-        let displayPhotoPrompt = self.shouldDisplayPromptLabel()
-        print("in did load", displayPhotoPrompt)
-        if displayPhotoPrompt == true {
-            self.imagePromptLabel.isHidden = false
-            print("not hidden")
-        } else {
-            self.imagePromptLabel.isHidden = true
-            print("hidden")
-        }
+        
+        displayPromptLabel()
         
         addGradientToView(view: profileInformationContainerView)
         
@@ -62,7 +54,6 @@ class PupperViewController: UIViewController, UICollectionViewDelegate, UICollec
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = ((collectionView.frame.width - 10) / 2)
-        print("cell width : \(width)")
         return CGSize(width: width, height: 200)
     }
     
@@ -96,11 +87,19 @@ extension PupperViewController: UIImagePickerControllerDelegate, UINavigationCon
     func shouldDisplayPromptLabel() -> Bool {
         print(pupperPhotosList.count)
         if self.imageModelController.images.count == 0 {
-            print("return true")
             return true
         } else {
 
             return false
+        }
+    }
+    
+    func displayPromptLabel() {
+        let displayPhotoPrompt = self.shouldDisplayPromptLabel()
+        if displayPhotoPrompt == true {
+            self.imagePromptLabel.isHidden = false
+        } else {
+            self.imagePromptLabel.isHidden = true
         }
     }
     
@@ -136,7 +135,6 @@ extension PupperViewController: UIImagePickerControllerDelegate, UINavigationCon
         picker.dismiss(animated: true)
 
         guard let image = info[.editedImage] as? UIImage else {
-            print("No image found")
             return
         }
 
@@ -145,7 +143,6 @@ extension PupperViewController: UIImagePickerControllerDelegate, UINavigationCon
         
         self.imageModelController.saveImageObject(image: image)
         self.pupperPhotoCollectionView.reloadData()
-        print("images count after save   ", self.imageModelController.images.count)
     }
     
 }
