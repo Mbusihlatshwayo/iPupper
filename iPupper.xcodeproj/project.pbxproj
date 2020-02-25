@@ -7,25 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC08ECBC2405B340002129ED /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC08ECBB2405B340002129ED /* ImageController.swift */; };
+		CC08ECBE2405B4C0002129ED /* ImageModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC08ECBD2405B4C0002129ED /* ImageModelController.swift */; };
 		CC907A7523FF9B65005B7C05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A7423FF9B65005B7C05 /* AppDelegate.swift */; };
 		CC907A7723FF9B65005B7C05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A7623FF9B65005B7C05 /* SceneDelegate.swift */; };
-		CC907A7923FF9B65005B7C05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A7823FF9B65005B7C05 /* ViewController.swift */; };
 		CC907A7C23FF9B65005B7C05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC907A7A23FF9B65005B7C05 /* Main.storyboard */; };
 		CC907A7F23FF9B65005B7C05 /* iPupper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC907A7D23FF9B65005B7C05 /* iPupper.xcdatamodeld */; };
 		CC907A8123FF9B69005B7C05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC907A8023FF9B69005B7C05 /* Assets.xcassets */; };
 		CC907A8423FF9B69005B7C05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC907A8223FF9B69005B7C05 /* LaunchScreen.storyboard */; };
+		CC907A8F23FFA855005B7C05 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC907A8E23FFA855005B7C05 /* Default-568h@2x.png */; };
+		CC907A9223FFAA9C005B7C05 /* VetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A9123FFAA9C005B7C05 /* VetViewController.swift */; };
+		CC907A9423FFAAD0005B7C05 /* PupperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A9323FFAAD0005B7C05 /* PupperViewController.swift */; };
+		CCC1256E23FFCA3200EAE820 /* PupperPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC1256D23FFCA3200EAE820 /* PupperPhotoCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC08ECBB2405B340002129ED /* ImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
+		CC08ECBD2405B4C0002129ED /* ImageModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModelController.swift; sourceTree = "<group>"; };
 		CC907A7123FF9B65005B7C05 /* iPupper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPupper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC907A7423FF9B65005B7C05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC907A7623FF9B65005B7C05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CC907A7823FF9B65005B7C05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CC907A7B23FF9B65005B7C05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC907A7E23FF9B65005B7C05 /* iPupper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iPupper.xcdatamodel; sourceTree = "<group>"; };
 		CC907A8023FF9B69005B7C05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC907A8323FF9B69005B7C05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC907A8523FF9B69005B7C05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC907A8E23FFA855005B7C05 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CC907A9123FFAA9C005B7C05 /* VetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VetViewController.swift; sourceTree = "<group>"; };
+		CC907A9323FFAAD0005B7C05 /* PupperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PupperViewController.swift; sourceTree = "<group>"; };
+		CCC1256D23FFCA3200EAE820 /* PupperPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PupperPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +52,7 @@
 		CC907A6823FF9B65005B7C05 = {
 			isa = PBXGroup;
 			children = (
+				CC907A8E23FFA855005B7C05 /* Default-568h@2x.png */,
 				CC907A7323FF9B65005B7C05 /* iPupper */,
 				CC907A7223FF9B65005B7C05 /* Products */,
 			);
@@ -58,16 +69,52 @@
 		CC907A7323FF9B65005B7C05 /* iPupper */ = {
 			isa = PBXGroup;
 			children = (
-				CC907A7423FF9B65005B7C05 /* AppDelegate.swift */,
-				CC907A7623FF9B65005B7C05 /* SceneDelegate.swift */,
-				CC907A7823FF9B65005B7C05 /* ViewController.swift */,
-				CC907A7A23FF9B65005B7C05 /* Main.storyboard */,
-				CC907A8023FF9B69005B7C05 /* Assets.xcassets */,
-				CC907A8223FF9B69005B7C05 /* LaunchScreen.storyboard */,
-				CC907A8523FF9B69005B7C05 /* Info.plist */,
-				CC907A7D23FF9B65005B7C05 /* iPupper.xcdatamodeld */,
+				CC907A9023FFA9D3005B7C05 /* Delegates */,
+				CC907A8D23FF9B90005B7C05 /* Controller */,
+				CC907A8C23FF9B8B005B7C05 /* View */,
+				CC907A8B23FF9B83005B7C05 /* Model */,
 			);
 			path = iPupper;
+			sourceTree = "<group>";
+		};
+		CC907A8B23FF9B83005B7C05 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CC08ECBD2405B4C0002129ED /* ImageModelController.swift */,
+				CC907A7D23FF9B65005B7C05 /* iPupper.xcdatamodeld */,
+				CC907A8523FF9B69005B7C05 /* Info.plist */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CC907A8C23FF9B8B005B7C05 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CC907A8023FF9B69005B7C05 /* Assets.xcassets */,
+				CC907A8223FF9B69005B7C05 /* LaunchScreen.storyboard */,
+				CC907A7A23FF9B65005B7C05 /* Main.storyboard */,
+				CCC1256D23FFCA3200EAE820 /* PupperPhotoCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CC907A8D23FF9B90005B7C05 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CC907A9123FFAA9C005B7C05 /* VetViewController.swift */,
+				CC907A9323FFAAD0005B7C05 /* PupperViewController.swift */,
+				CC08ECBB2405B340002129ED /* ImageController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CC907A9023FFA9D3005B7C05 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				CC907A7423FF9B65005B7C05 /* AppDelegate.swift */,
+				CC907A7623FF9B65005B7C05 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC907A8423FF9B69005B7C05 /* LaunchScreen.storyboard in Resources */,
+				CC907A8F23FFA855005B7C05 /* Default-568h@2x.png in Resources */,
 				CC907A8123FF9B69005B7C05 /* Assets.xcassets in Resources */,
 				CC907A7C23FF9B65005B7C05 /* Main.storyboard in Resources */,
 			);
@@ -141,9 +189,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC907A7923FF9B65005B7C05 /* ViewController.swift in Sources */,
+				CC08ECBC2405B340002129ED /* ImageController.swift in Sources */,
+				CC907A9223FFAA9C005B7C05 /* VetViewController.swift in Sources */,
+				CCC1256E23FFCA3200EAE820 /* PupperPhotoCollectionViewCell.swift in Sources */,
 				CC907A7F23FF9B65005B7C05 /* iPupper.xcdatamodeld in Sources */,
 				CC907A7523FF9B65005B7C05 /* AppDelegate.swift in Sources */,
+				CC08ECBE2405B4C0002129ED /* ImageModelController.swift in Sources */,
+				CC907A9423FFAAD0005B7C05 /* PupperViewController.swift in Sources */,
 				CC907A7723FF9B65005B7C05 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CM33HK3T4N;
-				INFOPLIST_FILE = iPupper/Info.plist;
+				INFOPLIST_FILE = iPupper/Model/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,7 +360,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CM33HK3T4N;
-				INFOPLIST_FILE = iPupper/Info.plist;
+				INFOPLIST_FILE = iPupper/Model/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
