@@ -19,6 +19,7 @@
 		CC907A9223FFAA9C005B7C05 /* VetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A9123FFAA9C005B7C05 /* VetViewController.swift */; };
 		CC907A9423FFAAD0005B7C05 /* PupperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A9323FFAAD0005B7C05 /* PupperViewController.swift */; };
 		CCC1256E23FFCA3200EAE820 /* PupperPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC1256D23FFCA3200EAE820 /* PupperPhotoCollectionViewCell.swift */; };
+		CCF7880924063B6E0089C500 /* EditPupperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF7880824063B6E0089C500 /* EditPupperViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		CC907A9123FFAA9C005B7C05 /* VetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VetViewController.swift; sourceTree = "<group>"; };
 		CC907A9323FFAAD0005B7C05 /* PupperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PupperViewController.swift; sourceTree = "<group>"; };
 		CCC1256D23FFCA3200EAE820 /* PupperPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PupperPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		CCF7880824063B6E0089C500 /* EditPupperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPupperViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				CC907A9123FFAA9C005B7C05 /* VetViewController.swift */,
 				CC907A9323FFAAD0005B7C05 /* PupperViewController.swift */,
 				CC08ECBB2405B340002129ED /* ImageController.swift */,
+				CCF7880824063B6E0089C500 /* EditPupperViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				CCC1256E23FFCA3200EAE820 /* PupperPhotoCollectionViewCell.swift in Sources */,
 				CC907A7F23FF9B65005B7C05 /* iPupper.xcdatamodeld in Sources */,
 				CC907A7523FF9B65005B7C05 /* AppDelegate.swift in Sources */,
+				CCF7880924063B6E0089C500 /* EditPupperViewController.swift in Sources */,
 				CC08ECBE2405B4C0002129ED /* ImageModelController.swift in Sources */,
 				CC907A9423FFAAD0005B7C05 /* PupperViewController.swift in Sources */,
 				CC907A7723FF9B65005B7C05 /* SceneDelegate.swift in Sources */,
