@@ -176,7 +176,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="tHv-Mk-Qcs"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Edit Pupper Profile" id="Z3t-Rb-54m"/>
+                    <navigationItem key="navigationItem" title="Edit Pupper Profile" id="Z3t-Rb-54m">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Abg-N8-6Qz"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTP-lU-ogx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
