@@ -35,14 +35,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86O-LS-ulo">
                                 <rect key="frame" x="0.0" y="88" width="434" height="241.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mocha" translatesAutoresizingMaskIntoConstraints="NO" id="V3Y-aD-IYm">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V3Y-aD-IYm">
                                         <rect key="frame" x="20" y="121.5" width="100" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="8j0-9W-xzI"/>
                                             <constraint firstAttribute="width" constant="100" id="qOk-cW-Tkj"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Irvine, CA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpr-9T-XlP">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City, State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpr-9T-XlP">
                                         <rect key="frame" x="163" y="195" width="263" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="rP5-C3-eh7"/>
@@ -58,7 +59,7 @@
                                             <constraint firstAttribute="height" constant="32" id="ePs-br-QQV"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mocha Puppercino" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWL-B7-Lm8">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your pupper's name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWL-B7-Lm8">
                                         <rect key="frame" x="128" y="141.5" width="298" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="vxO-9i-hW9"/>
@@ -144,6 +145,7 @@
                         <viewLayoutGuide key="safeArea" id="xvG-0d-w6s"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Pup" id="S0L-jp-bcu">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Hs5-mJ-H5u"/>
                         <barButtonItem key="rightBarButtonItem" image="Camera" id="WSV-65-X3m">
                             <connections>
                                 <action selector="didSelectCameraButton:" destination="wAb-6X-idt" id="EXk-cS-xp5"/>
@@ -157,11 +159,28 @@
                         <outlet property="pupperNameLabel" destination="qWL-B7-Lm8" id="SuF-Ik-Qm5"/>
                         <outlet property="pupperPhotoCollectionView" destination="bP0-fZ-B7l" id="8Gk-fw-yxr"/>
                         <outlet property="pupperProfilePicImageView" destination="V3Y-aD-IYm" id="f79-xx-je0"/>
+                        <segue destination="qvX-ym-CuB" kind="show" id="a1x-Cr-RPQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qJ-xL-IvG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2260.8695652173915" y="543.75"/>
+        </scene>
+        <!--Edit Pupper Profile-->
+        <scene sceneID="FX3-T9-Gf1">
+            <objects>
+                <viewController id="qvX-ym-CuB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YlW-aa-50e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="tHv-Mk-Qcs"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Pupper Profile" id="Z3t-Rb-54m"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xTP-lU-ogx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3092" y="542"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gpw-2D-PsT">
@@ -224,7 +243,6 @@
     <resources>
         <image name="Camera" width="24" height="24"/>
         <image name="DogIcon" width="25" height="25"/>
-        <image name="Mocha" width="3024" height="4032"/>
         <image name="VetIcon" width="25" height="25"/>
         <image name="pin" width="512" height="512"/>
     </resources>

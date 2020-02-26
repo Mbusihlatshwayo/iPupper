@@ -10,7 +10,6 @@ import UIKit
 
 class PupperViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout,UICollectionViewDataSource {
     
-    
     @IBOutlet weak var pupperProfilePicImageView: UIImageView!
     @IBOutlet weak var pupperNameLabel: UILabel!
     @IBOutlet weak var pupperLocationLabel: UILabel!
@@ -20,6 +19,7 @@ class PupperViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     var pupperPhotosList = [UIImage]()
     let imageModelController = ImageModelController()
+    var imagePickerSender = String()
     
     // MARK: - View Lifecycle
     
@@ -28,11 +28,18 @@ class PupperViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.roundProfilePicture()
         
         displayPromptLabel()
-        
+        if let profilePicture = self.imageModelController.profilePicture {
+            self.pupperProfilePicImageView.image = profilePicture
+        } else {
+            self.pupperProfilePicImageView.image = UIImage(named: "plus")
+        }
         addGradientToView(view: profileInformationContainerView)
         
         pupperPhotoCollectionView.delegate = self
         pupperPhotoCollectionView.dataSource = self
+        
+        self.pupperProfilePicImageView.isUserInteractionEnabled = true
+        self.pupperProfilePicImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTapped)))
     }
     
     
@@ -46,7 +53,7 @@ class PupperViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         let cell = collectionView
             .dequeueReusableCell(withReuseIdentifier: "pupperPicturesCell", for: indexPath) as! PupperPhotoCollectionViewCell
-        
+//        print("name", self.imageModelController.images[indexPath.row])
         cell.pupperImageView.image = self.imageModelController.images[indexPath.row]
         
         return cell
@@ -67,6 +74,12 @@ class PupperViewController: UIViewController, UICollectionViewDelegate, UICollec
 //    }
     
     @IBAction func didSelectCameraButton(_ sender: Any) {
+        imagePickerSender = "photos_list"
+        presentCameraPicker()
+    }
+    
+    @objc private func imageTapped(_ recognizer: UITapGestureRecognizer) {
+        imagePickerSender = "profile_picture"
         presentCameraPicker()
     }
     
@@ -85,7 +98,6 @@ extension PupperViewController: UIImagePickerControllerDelegate, UINavigationCon
     }
     
     func shouldDisplayPromptLabel() -> Bool {
-        print(pupperPhotosList.count)
         if self.imageModelController.images.count == 0 {
             return true
         } else {
@@ -140,9 +152,14 @@ extension PupperViewController: UIImagePickerControllerDelegate, UINavigationCon
 
         // print out the image size as a test
         print(image.size)
-        
-        self.imageModelController.saveImageObject(image: image)
-        self.pupperPhotoCollectionView.reloadData()
+        if imagePickerSender == "photos_list" {
+            self.imageModelController.saveImageObject(image: image, forPurpose: "photos_list")
+            self.pupperPhotoCollectionView.reloadData()
+        } else {
+            self.imageModelController.saveImageObject(image: image, forPurpose: "profile_picture")
+            self.viewDidLoad()
+        }
+
     }
     
 }

@@ -18,13 +18,34 @@ class ImageModelController {
 
     var savedObjects = [NSManagedObject]()
     var images = [UIImage]()
+    var profilePicture: UIImage?
     var managedContext: NSManagedObjectContext!
     
     init() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         managedContext = appDelegate.persistentContainer.viewContext
-        
+
         fetchImageObjects()
+        
+//        deleteAllImages()
+    }
+    
+    func deleteAllImages() {
+        do {
+            // delete
+            let imageObjectRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
+            savedObjects = try managedContext.fetch(imageObjectRequest)
+            for deletions in savedObjects {
+                managedContext.delete(deletions)
+            }
+            do {
+                try managedContext.save()
+            } catch {
+                print("managed context save failed")
+            }
+        } catch {
+            print("couldn't delete")
+        }
     }
     
     func fetchImageObjects() {
@@ -32,9 +53,9 @@ class ImageModelController {
         
         do {
             savedObjects = try managedContext.fetch(imageObjectRequest)
-            
             images.removeAll()
-            
+            profilePicture = nil
+  
             for imageObject in savedObjects {
                 let savedImageObject = imageObject as! StoredImage
                 
@@ -43,16 +64,28 @@ class ImageModelController {
                 let storedImage = ImageController.shared.fetchImage(imageName: savedImageObject.imageName!)
                 
                 if let storedImage = storedImage {
-                    images.append(storedImage)
+                    if savedImageObject.imageName != "profile_picture" {
+                        images.append(storedImage)
+                    } else {
+                        profilePicture = storedImage
+                    }
+//                    print("image named: ", savedImageObject.imageName)
                 }
             }
         } catch let error as NSError {
-            print("Could not return image objects: \(error)")
+//            print("Could not return image objects: \(error)")
         }
     }
     
-    func saveImageObject(image: UIImage) {
-        let imageName = ImageController.shared.saveImage(image: image)
+    func saveImageObject(image: UIImage, forPurpose: String) {
+
+        var imageName: String?
+        
+        if forPurpose == "profile_picture" {
+            imageName = ImageController.shared.saveProfilePhoto(image: image)
+        } else {
+            imageName = ImageController.shared.saveImage(image: image)
+        }
         
         if let imageName = imageName {
             let coreDataEntity = NSEntityDescription.entity(forEntityName: entityName, in: managedContext)
@@ -63,11 +96,15 @@ class ImageModelController {
             do {
                 try managedContext.save()
                 
-                images.append(image)
+                if forPurpose != "profile_picture" {
+                    images.append(image)
+                } else {
+                    profilePicture = image
+                }
                 
-                print("\(imageName) was saved in new object.")
+//                print("\(imageName) was saved in new object.")
             } catch let error as NSError {
-                print("Could not save new image object: \(error)")
+//                print("Could not save new image object: \(error)")
             }
         }
     }
@@ -90,9 +127,9 @@ class ImageModelController {
             savedObjects.remove(at: imageIndex)
             images.remove(at: imageIndex)
             
-            print("Image object was deleted.")
+//            print("Image object was deleted.")
         } catch let error as NSError {
-            print("Could not delete image object: \(error)")
+//            print("Could not delete image object: \(error)")
         }
     }
     

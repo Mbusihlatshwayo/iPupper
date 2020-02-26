@@ -42,6 +42,32 @@ class ImageController {
         }
     }
     
+    func saveProfilePhoto(image: UIImage) -> String? {
+
+        let imageName = "profile_picture"
+        
+        if let imageData = image.pngData() {
+            do {
+                let filePath = documentsPath.appendingPathComponent(imageName)
+                
+                try imageData.write(to: filePath)
+                
+                print("\(imageName) was saved.")
+                
+                return imageName
+            } catch let error as NSError {
+                print("\(imageName) could not be saved: \(error)")
+                
+                return nil
+            }
+            
+        } else {
+            print("Could not convert UIImage to png data.")
+            
+            return nil
+        }
+    }
+    
     func fetchImage(imageName: String) -> UIImage? {
         let imagePath = documentsPath.appendingPathComponent(imageName).path
         
